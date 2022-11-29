@@ -57,9 +57,8 @@ class CoffeeMachine:
     def make_coffee(self, coffee_name):
         """To make coffee using other class"""
         drink = self.menu.find_drink(coffee_name)
-        if self.coffee_maker.is_resource_sufficient(drink):
-            if self.money_machine.make_payment(drink.cost):
-                self.coffee_maker.make_coffee(drink)
+        if self.coffee_maker.is_resource_sufficient(drink) and self.money_machine.make_payment(drink.cost):
+            self.coffee_maker.make_coffee(drink)
 
 
 machine = CoffeeMachine()
