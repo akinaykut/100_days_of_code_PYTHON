@@ -81,6 +81,7 @@ def run():
     for _ in range(10):
         draw_dot_for_line()
         go_up_line()
+    tim.hideturtle()
 
 
 def tim_start_position():
